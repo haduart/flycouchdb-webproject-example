@@ -8,7 +8,10 @@
             [cheshire.generate :refer [add-encoder encode-str remove-encoder]]
             [ring.util.response :as resp]
             [ring.adapter.jetty :as jetty]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json])
+  (:import [java.io File]
+           [java.net URL URLDecoder]
+           [org.jboss.vfs VFS VirtualFile VirtualFileFilter]))
 
 (defn json-response [data & [status]]
   {:status  (or status 200)
@@ -34,7 +37,18 @@
 
 (defn init []
   (println "Running migrations")
-  (migrate flydb)
+  ;(clojure.pprint/pprint (.getProtocol folder-path))
+  ;(->>
+  ;  (.getPath folder-path)
+  ;  (. URLDecoder decode)
+  ;  (File.)
+  ;  (.getAbsolutePath)
+  ;  (. VFS getChild)
+  ;  (.getChildren)
+  ;  first
+  ;  (.openStream)
+  ;  slurp
+  ;  clojure.pprint/pprint)
   (println "Migrations done!"))
 
 (def app
