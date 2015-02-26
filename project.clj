@@ -13,8 +13,7 @@
                  [org.clojure/data.json "0.2.4"]
                  [ring/ring-jetty-adapter "1.1.6"]
                  [clj-http "0.7.8"]
-                 [flycouchdb "0.2.1-SNAPSHOT"]
-                 [org.jboss/jboss-vfs "3.1.0.Final"]]
+                 [flycouchdb "0.2.1"]]
 
   :plugins [[lein-ring "0.8.10"]
             [lein-midje "3.0.0"]]
