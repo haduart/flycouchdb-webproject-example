@@ -1,0 +1,4 @@
+{:dbname      "eduard-db"
+ :action      :rename-keys
+ :rename-keys {:filter-fn (fn [{maximum :maximum}] (< 700 maximum))
+               :rename-fn (fn [{name :name maximum :maximum}] (str name "-" maximum))}}

@@ -1,0 +1,6 @@
+{:dbname      "eduard-db"
+ :action      :create-view
+ :create-view {:view-design   "view-design"
+               :view-name     "view-name"
+               :function-type "javascript"
+               :view-function "function(doc) {if (doc.alert){emit(doc.maximum, doc);}}"}}

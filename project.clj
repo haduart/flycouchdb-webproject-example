@@ -1,18 +1,15 @@
 (defproject flycouchdb-webproject-example "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url  "http://www.eclipse.org/legal/epl-v10.html"}
+  :description "Example of a webproject for FlyCouchDB"
+  :url "https://github.com/haduart/flycouchdb-webproject-example"
+  :license {:name "BSD"
+            :url "http://www.opensource.org/licenses/BSD-3-Clause"}
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [compojure "1.1.6"]
-                 [cheshire "5.3.1"]
-                 [org.clojure/tools.nrepl "0.2.3"]
-                 [com.cemerick/drawbridge "0.0.6" :exclusions [org.clojure/tools.nrepl]]
-                 [ring-basic-authentication "1.0.1"]
+                 [compojure "1.3.2"]
+                 [cheshire "5.4.0"]
                  [clj-http "0.7.8"]
                  [org.clojure/data.json "0.2.4"]
                  [ring/ring-jetty-adapter "1.1.6"]
-                 [clj-http "0.7.8"]
+                 [clj-http "1.0.1"]
                  [flycouchdb "0.2.1"]]
 
   :plugins [[lein-ring "0.8.10"]
