@@ -1,0 +1,10 @@
+{:dbname           "eduard-db"
+ :action           :insert-documents
+ :insert-documents {:insert-documents-fn
+                    (fn [] (->>
+                             (range 1 1000)
+                             (mapv (fn [x] {:_id     (str x)
+                                            :name    (str "user-" x)
+                                            :mail    (str "user-" x "@gmail.com")
+                                            :minimum (rand-int 500)
+                                            :maximum (rand-int 1200)}))))}}

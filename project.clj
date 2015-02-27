@@ -1,8 +1,8 @@
 (defproject flycouchdb-webproject-example "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url  "http://www.eclipse.org/legal/epl-v10.html"}
+  :description "Example of a webproject for FlyCouchDB"
+  :url "https://github.com/haduart/flycouchdb-webproject-example"
+  :license {:name "BSD"
+            :url "http://www.opensource.org/licenses/BSD-3-Clause"}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.1.6"]
                  [cheshire "5.3.1"]

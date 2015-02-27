@@ -1,0 +1,4 @@
+{:dbname       "eduard-db"
+ :action       :edit-entries
+ :edit-entries {:filter-fn (fn [{maximum :maximum}] (< 1000 maximum))
+                :edit-fn   (fn [entry] (assoc entry :alert true))}}

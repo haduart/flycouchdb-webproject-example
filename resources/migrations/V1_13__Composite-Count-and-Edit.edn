@@ -1,0 +1,17 @@
+{:action    :composite
+ :composite {:composite-fn (fn []
+                             (let [db (be.dsquare.clutch/couch "eduard-db")
+                                   user-view (be.dsquare.clutch/get-view db "view-design" "view-name")
+                                   results-in-view (take (count user-view) user-view)
+                                   averages (atom {})]
+                               (do
+                                 (->>
+                                   results-in-view
+                                   (map #(:value %))
+                                   (map (fn [{:keys [maximum minimum _id]}] {:_id _id :average (double (/ (+ maximum minimum) 2))}))
+                                   (mapv (fn [x] (swap! averages assoc (:_id x) (dissoc x :_id)))))
+
+                                 [{:dbname       "eduard-db"
+                                   :action       :edit-entries
+                                   :edit-entries {:filter-fn (fn [{id :_id}] (not (nil? (get @averages id))))
+                                                  :edit-fn   (fn [entry] (merge entry (get @averages (:_id entry))))}}])))}}
